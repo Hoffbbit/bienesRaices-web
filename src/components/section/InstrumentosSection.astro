@@ -1,0 +1,36 @@
+---
+import { instrumentos } from "../../data/Instrumentos"
+import CarruselInstrumentos from "../CarruselInstrumentos.astro"
+const carruselInstrumentos = [...instrumentos];
+---
+
+<section class="pt-32">
+    <div class="text-center text-4xl mb-16">
+        <h3 class="text-[#1c2d37] text-6xl font-semibold">Nuestros <span class="font-light text-white">Instrumentos</span></h3>
+    </div>
+    <article class="overflow-hidden">
+     <div class="flex animate-scroll">
+        {
+          carruselInstrumentos.map((instrumento) => (
+            <CarruselInstrumentos instrumento={instrumento} />
+          ))
+        }
+     </div>
+  </article>
+</section>
+<style>
+@keyframes scroll {
+  0% {
+    transform:translateX(0);
+  }
+  100% {
+  transform: translateX(calc(-400px * 5 - 0.5rem * 10)); 
+  }
+}
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+.animate-scroll:hover {
+  animation-play-state: paused;
+ }
+</style>
