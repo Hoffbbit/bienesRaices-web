@@ -1,5 +1,6 @@
 ---
-import Header from "../components/Header.astro"
+import Header from "../components/Header.astro";
+import Ubicacion from "../components/icon/Ubicacion.astro"
 
 interface Props { 
 	title: string 
@@ -23,8 +24,92 @@ const { title, description } = Astro.props;
 	<body>
 		<Header/>
 		<slot/>
+
+		<section class="pt-24">
+
+			<h3 class="text-white text-center text-6xl font-semibold font-mono">Nuestras <span class="font-light font-mono text-white">Marcas</span></h3>
+			<section class="pt-8">
+			<h2 class="text-white text-center text-3xl font-mono gap-2">BOSE - ROLAND - YAMAHA - SPECTOR - LP - SHURE - TAMA - IBANEZ - LUDWIG - PRELUDE</h2>
+		    <section class="pt-24">
+
+			<div class="justify-center flex text-center items-center mb-10 gap-2">
+				<Ubicacion class="text-red-600 size-16"/>
+				<h3 class="text-white text-6xl font-semibold">¿Donde <span class="font-light text-white">nos encontramos?</span></h3>
+			</div>	
+
+		<iframe name="iframe_mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.4128893146467!2d-
+		                                60.7075914!3d-31.649921799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3
+										!1m2!1s0x95b5a9a5b8ffd407%3A0x84221aed9085d8b3!2sPromusica!5e0!3m2!1ses-419!
+										2sar!4v1725131028294!5m2!1ses-419!2sar" 
+	            allowfullscreen="100%"
+		        loading="lazy" 
+		        referrerpolicy="no-referrer-when-downgrade">
+		</iframe>
+
+		<section class="pt-5">
+		<h3 class="text-white text-3xl font-semibold justify-center flex text-center gap-2">San Martin 2236 <span class="font-light text-white"> - SANTA FE</span></h3>
+		<section class="pt-16">
+
+		<div class="text-center text-4xl">
+
+		<section class="pt-5">
+		<p class="text-white text-3xl font-semibold font-mono gap-2">Todo lo que estás buscando en audio profesional y equipos.</p>
+		<section class="pt-24">
+
+		<footer class="footer">
+
+			<ul class="social-icon">
+				<li class="icon-elem">
+                    <a href="" class="icon">
+						<ion-icon name="home-outline"></ion-icon>
+					</a>
+				</li>
+
+				<li class="icon-elem">
+                    <a href="" class="icon">
+						<ion-icon name="logo-instagram"></ion-icon>
+					</a>
+				</li>
+
+				<li class="icon-elem">
+                    <a href="" class="icon">
+						<ion-icon name="logo-whatsapp"></ion-icon>		
+					</a>
+				</li>
+
+				<li class="icon-elem">
+                    <a href="" class="icon">
+						<ion-icon name="logo-facebook"></ion-icon>	
+					</a>
+				</li>
+
+				<li class="icon-elem">
+                    <a href="" class="icon">
+						<ion-icon name="mail-outline"></ion-icon>
+					</a>
+				</li>
+			</ul>	
+
+		
+        <ul class="gap-4 menu">
+			<li class="menu-elem">
+				<a href="" class="menu-icon"> Inicio </a>
+			</li>
+			<li class="menu-elem">
+				<a href="" class="menu-icon"> Quienes Somos </a>
+			</li>
+			<li class="menu-elem">
+				<a href="" class="menu-icon"> Contacto </a>
+			</li>
+		</ul>
+		<p class="text">@2024 | Hoffmann Agustin Emilio Lionel</p>
+
+		</footer>
+
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 	</body>
-	
 </html>
 
 <style is:global> 
@@ -35,4 +120,91 @@ const { title, description } = Astro.props;
 		background-size: 224px;
 		scroll-behavior: smooth;
 	}
+</style>
+
+<style> 
+	iframe{
+		margin:auto;
+		width: 750px;
+		height: 600px;
+	}
+</style>
+
+<style>
+	footer{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: sans-serif;
+		position: relative;
+		width: 100%;
+		background: rgb(32, 32, 32);
+		min-height: 100px;
+		padding: 20px 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.social-icon{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		margin: 10px 5px;
+		flex-wrap: wrap;
+	}
+
+	.icon-elem{
+		list-style: none;
+	}
+
+	.icon{
+		color: white;
+		font-size: 32px;
+		display: inline-block;
+		margin: 0 10px;
+		transition: 0.5s;
+	}
+
+	.icon:hover {
+		transform: translateY(-10px);
+	}
+
+	.menu{
+		display: flex;
+		justify-content: center;
+		position: relative;
+		align-items: center;
+		margin: 10px;
+		flex-wrap: wrap;
+	}
+
+    .menu-elem{
+	list-style: none;
+    }
+
+    .menu-icon{
+	color: white;
+	font-size: 20px;
+	display: inline-block;
+	text-decoration: none;
+	margin: 5px 10px;
+	opacity: 0.75;
+	transition: 0.5s;
+    }
+
+    .menu-icon:hover{
+	opacity: 1;
+    }
+
+    .text{
+	color: white;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	font-size: 20px;
+    }
+
 </style>
