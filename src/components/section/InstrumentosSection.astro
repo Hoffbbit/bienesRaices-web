@@ -6,13 +6,17 @@ const carruselInstrumentos = [...instrumentos];
 
 <section class="pt-24">
 
-    <div class="text-center text-4xl">
+<!--BREVE INFORMACION DEL COMERCIO, INFERIOR A HEROVIDEO-->
+
+    <div class="bg-[#2b2b2b] text-center text-4xl pt-12">
 <h5 class="text-white text-6xl font-semibold font-mono gap-2">¡En <span class="font-light text-white font-mono">Promusica!</span></h5>
-<section class="pt-6">
-<p class="text-white text-3xl font-semibold font-mono gap-2">Importamos, Distribuimos y Vendemos Instrumentos Musicales...contando con mas de 50 años de experiencia en lo que te gusta.</p>
-<section class="pt-24">
-<h3 class="text-white text-6xl font-semibold font-mono">Nuestros <span class="font-light font-mono text-white">Instrumentos</span></h3>
+<section class="pt-14">
+<p class="text-white text-3xl font-mono gap-2">Importamos, Distribuimos y Vendemos Tanto Equipos Como Instrumentos Musicales...<span class="text-white font-mono"></span>contando con mas de 50 años de experiencia en lo que te gusta.</p>
+<section class="pt-20">
     </div>
+<!--TITULO CARRUSEL DE INSTRUMENTOS-->
+<section class="pt-20">
+<h3 class="text-white text-6xl font-semibold font-mono text-center">Nuestros <span class="font-light font-mono text-white">Instrumentos</span></h3>
     
     <article class="overflow-hidden">
      <div class="flex animate-scroll">
@@ -24,6 +28,9 @@ const carruselInstrumentos = [...instrumentos];
      </div>
   </article>
 </section>
+
+<!--ESTILOS CARRUSEL INSTRUMENTOS-->
+
 <style>
 @keyframes scroll {
   0% {
@@ -34,7 +41,7 @@ const carruselInstrumentos = [...instrumentos];
   }
 }
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 55s linear infinite;
 }
 .animate-scroll:hover {
   animation-play-state: paused;

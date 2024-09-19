@@ -10,6 +10,8 @@ interface Props {
 const { title, description } = Astro.props; 
 ---
 
+<!--DEFINIMOS EL DOCUMENTO TIPO HTML-->
+
 <!doctype html>
 <html lang="es">
 	<head>
@@ -20,24 +22,121 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<link rel="icon" href="/logo-white.png">
+		<link rel="stylesheet" href="estilos.css">
 	</head>
-	<body>
+
+        <!--SECCION BODY (AQUI SE ENCUENTRAN LOS ELEMENTOS QUE POSEE LA PAGINA WEB)-->
+
+	    <body>
 		<Header/>
 		<slot/>
 
+		<section class="pt-24"> <!--SECTION AGREGA ESPACIOS DESPUES DE CADA ELEMENTO-->
+
+        <!--SECCION "MARCAS" (MARCAS QUE TRABAJA LA CASA DE MUSICA)-->
+        <div class="bg-[#2b2b2b]">
+			<h3 class="text-white text-center text-6xl font-semibold font-mono pt-16">Nuestras <span class="font-light font-mono text-white">Marcas</span></h3>
+			<section class="pt-8">
+			<h2 class="text-white text-center text-3xl font-mono gap-2">LANEY - BOSE - ROLAND - YAMAHA - SPECTOR - LP - SHURE - TAMA - IBANEZ - LUDWIG - PRELUDE - FENDER</h2>
+		    <section class="pt-24">
+		</div>
+        <!--SECCION "EQUIPOS" (EQUIPOS QUE TRABAJA LA CASA DE MUSICA)-->
+
+		<section class="pt-14">
+		<h3 class="text-white text-center text-6xl font-semibold font-mono">Nuestros <span class="font-light font-mono text-white">Equipos</span></h3>
+		<section class="pt-4">
+
+		<!--SECTION-CARD NUESTROS EQUIPOS-->
+			
+		<div class="flex justify-center items-center container">
+				<div class="card">
+				<figure>
+					<img src="./equipos/equipo-1.png"> <!--LLAMAMOS A LA IMAGEN CORRESPONDIENTE A CADA EQUIPO-->
+				</figure>
+				<div class="contenido">
+                   <h3>YAMAHA</h3> <!--TITULAMOS LA CARD CON LA MARCA DEL EQUIPO Y A CONTINUACION DETALLAMOS UNA BREVE DESCRIPCION DEL MISMO-->
+				   <p>El amplificador de Guitarra Yamaha GA-15II es el compañero perfecto para guitarristas, con tonos versátiles y excelente tono formar capacidades para crear el amplificador perfecto. Con 15 vatios de potencia y un altavoz de gama completa, los instrumentistas pueden producir paisajes sonoros dinámicos que capturan las características de su guitarra.</p>
+				   <a href="#">Leer mas</a> <!--LINK DE REDIRECCION HACIA EL FORMULARIO EQUIPOS-->
+				</div>
+			</div>
+
+			<div class="card">
+			<figure>
+				<img src="./equipos/equipo-2.png">
+			</figure>
+				<div class="contenido">
+                   <h3>BOSE</h3>
+				   <p>La banda sonora de tu vida: alimenta tus altavoces pasivos y conecta el amplificador de música Bose a través de Wi-Fi 
+
+					para que puedas transmitir todos tus favoritos, desde listas de reproducción hasta podcasts, fácilmente desde tu teléfono. 
+
+					Haz conexiones: para una experiencia de sonido óptima, empareja con altavoces Bose en techo o exteriores.</p>
+				   <a href="#">Leer mas</a>
+			    </div>
+			</div>
+
+			<div class="card">
+				<figure>
+					<img src="./equipos/equipo-3.png">
+				</figure>
+				<div class="contenido">
+                   <h3>ROLAND</h3>
+				   <p>El Kc-110 de Roland es un amplificador de teclado estéreo alimentado por batería con tres canales de entrada separados (incluida una entrada de micrófono XLR), 
+
+					efectos incorporados y muchas funciones útiles, como la capacidad de montarlo en un altavoz de pie Puede conectar teclados estéreo, 
+
+					micrófonos y otros dispositivos de nivel de línea al Kc-110.</p>
+				   <a href="#">Leer mas</a>
+				</div>
+			</div>
+
+			<div class="card">
+				<figure>
+					<img src="./equipos/equipo-4.png">
+				</figure>
+					<div class="contenido">
+					   <h3>IBANEZ</h3>
+					   <p>Con tu amplificador vas a mejorar todos los sonidos. 
+						
+						Si lo que estás buscando es un equipo ligero y resistente , este amplificador de tipo transistor es ideal para vos.
+						
+						Cantidad de canales
+						Al contar con 2 canales, te permitirán alcanzar tonos limpios y reproducir todos los géneros de música.
+						
+						Compartí tu música
+						Este amplificador cuenta con un conector de entrada tipo Jack.</p>
+					   <a href="#">Leer mas</a>
+					</div>
+				</div>
+	
+				<div class="card">
+					<figure>
+						<img src="./equipos/equipo-5.png">
+					</figure>
+					<div class="contenido">
+					   <h3>LANEY</h3>
+					   <p>El LX20R es un amplificador de 20 watts y 2 canales con ecualización de 3 bandas y Reverb incorporado y control de Ganancia, 
+
+						lo que da opciones sonoras desde tonos limpios a distorsiones extremas. La ecualización de 3 bandas brinda infinitas opciones 
+
+						de moldeado tonal para ajustarse a todos los estilos y guitarras. El reverb puede ajustarse a gusto para agregar ambiente al sonido.</p>
+					   <a href="#">Leer mas</a>
+					</div>
+				</div>
+		</div>
+		</div>
+
 		<section class="pt-24">
 
-			<h3 class="text-white text-center text-6xl font-semibold font-mono">Nuestras <span class="font-light font-mono text-white">Marcas</span></h3>
-			<section class="pt-8">
-			<h2 class="text-white text-center text-3xl font-mono gap-2">BOSE - ROLAND - YAMAHA - SPECTOR - LP - SHURE - TAMA - IBANEZ - LUDWIG - PRELUDE</h2>
-		    <section class="pt-24">
+        <!--SECCION MAPA -->
 
-			<div class="justify-center flex text-center items-center mb-10 gap-2">
-				<Ubicacion class="text-red-600 size-16"/>
-				<h3 class="text-white text-6xl font-semibold">¿Donde <span class="font-light text-white">nos encontramos?</span></h3>
-			</div>	
+		<div class="justify-center flex pt-12 text-center items-center gap-2">
+				<Ubicacion class="text-red-600 size-16"/> <!--LLAMAMOS AL ICONO "UBICACION"-->
+				<h3 class="text-white text-5xl font-mono font-semibold">¿Donde <span class="font-light text-white">nos encontramos?</span></h3> <!--TITULO AGREGADO ANTES DEL MAPA-->
+		</div>	
 
-		<iframe name="iframe_mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.4128893146467!2d-
+        <!--LLAMAMOS A LA UBICACION EN TIEMPO REAL DE LA CASA DE MUSICA MEDIANTE SU LINK EMBEBIDO Y LA FUNCIONALIDAD "IFRAME"-->
+		<iframe name="iframe_mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.4128893146467!2d- 
 		                                60.7075914!3d-31.649921799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3
 										!1m2!1s0x95b5a9a5b8ffd407%3A0x84221aed9085d8b3!2sPromusica!5e0!3m2!1ses-419!
 										2sar!4v1725131028294!5m2!1ses-419!2sar" 
@@ -46,22 +145,143 @@ const { title, description } = Astro.props;
 		        referrerpolicy="no-referrer-when-downgrade">
 		</iframe>
 
+        <!--BRINDAMOS LA DIRECCION DE LA CASA DE MUSICA LUEGO DEL MAPA-->
 		<section class="pt-5">
 		<h3 class="text-white text-3xl font-semibold justify-center flex text-center gap-2">San Martin 2236 <span class="font-light text-white"> - SANTA FE</span></h3>
 		<section class="pt-16">
 
-		<div class="text-center text-4xl">
+	    <!--FIN SECCION MAPA-->
 
-		<section class="pt-5">
-		<p class="text-white text-3xl font-semibold font-mono gap-2">Todo lo que estás buscando en audio profesional y equipos.</p>
+		<div class="bg-[#2b2b2b] text-center pt-2 text-4xl">
+		<section class="pt-16">
+		<p class="text-white text-4xl font-mono gap-2">Todo lo que estás buscando en audio profesional y equipos</p>
 		<section class="pt-24">
+        </div>
 
+		<!--SECCION NOSOTROS  -->
+
+		<section id="about" class="flex justify-center bg-[#2b2b2b] h-[800px] mt-20 pt-4 relative" data-astro-cid-wm6ud4mt>
+        
+		<div class="flex flex-col text-center text-4xl items-center w-[560px] gap-2 mt-3" data-astro-cid-wm6ud4mt>
+		<div class="border border-x-0 font-serif" data-astro-cid-wmcud4mt>
+		<span data-astro-cid-wm6ud4mt>Quienes Somos</span>
+		</div>
+		<span>
+		<section class="pt-4">
+        <p class="text-2xl font-extralight" data-astro-cid-wm6ud4mt>Nuestro objetivo es la satisfaccion del cliente y la excelencia en nuestra atencion</p>
+		<section class="pt-4">
+		<p class="text-2xl font-extralight" data-astro-cid-wm6ud4mt>Mediante la entrega de productos de maxima calidad y el asesoramiento exclusivo de musicos experimentados como Claudio "Tano" Marciello</p>
+		<section class="pt-4">
+		<p class="text-2xl font-extralight" data-astro-cid-wm6ud4mt>Contamos con una amplia gama de stock y la posibilidad 
+		de adquirir instrumentos importados de cualquier parte del mundo</p>
+		<section class="pt-4">
+		<p class="text-2xl font-extralight" data-astro-cid-wm6ud4mt>Desde nuestro inicio en 1973 como una pequeña casa de Lutheria que apenas contaba con 3 empleados hasta el dia de hoy, con multiples sucursales al rededor del pais trabajando para llegar a donde estes</p>
+		<section class="pt-4">
+		<p class="text-2xl font-extralight" data-astro-cid-wm6ud4mt>¿Por que confiar en nosotros? por nuestra distinguida atencion al cliente, acompañada de musicos de primera, contar con productos tanto nacionales como internacionales y promover marcas del mayor prestigio</p>
+	    </span>
+	    </div>
+
+		<div class="absolute w-[400px] h-[300px] top-6 left-4 rounded-3xl overflow-hidden mb-4 float-animation group" style="animatio-duration: 3s; animation-delay: 0.45s;">
+		<svg class="absolute inset-0 m-auto size-5 z-10 opacity-0 transform scale-0 group-hover:opacity-100 group-hover:scale-150 transition-transform duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+		<path d="M12 5l0 14"></path>
+		<path d="M5 12l14 0"></path>
+		</svg>
+		<img class="group-hover:brightness-50 hover" src="/instrumentos/instrumento-1.png" alt="instrumento">
+		</div>
+
+		<div class="absolute w-[400px] h-[300px] top-6 right-4 rounded-3xl overflow-hidden mb-4 float-animation group" style="animation-duration: 3s; animation-delay: 0.21s;">
+		<svg class="absolute inset-0 m-auto size-5 z-10 opacity-0 transform scale-0 group-hover:opacity-100 group-hover:scale-150 transition-transform duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>	
+		<path d="M12 5l0 14"></path>
+		<path d="M5 12l14 0"></path>
+		</svg>
+		<img class="group-hover:brightness-50 hover" src="/instrumentos/instrumento-2.png" alt="instrumento">
+		</div>
+
+		<div class="absolute w-[400px] h-[300px] bottom-2.5 right-4 rounded-3xl overflow-hidden mb-4 float-animation group" style="animation-duration: 3s; animation-delay: 0.43s;">
+		<svg class="absolute inset-0 m-auto size-5 z-10 opacity-0 transform scale-0 group-hover:opacity-100 group-hover:scale-150 transition-transform duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+		<path d="M12 5l0 14"></path>
+		<path d="M5 12l14 0"></path>
+		</svg>
+        <img class="group-hover:brightness-50 hover" src="/instrumentos/instrumento-3.png" alt="instrumento">
+		</div>
+
+        <div class="absolute w-[400px] h-[300px] bottom-2.5 left-4 rounded-3xl overflow-hidden mb-4 float-animation group" style="animation-duration: 3s; animation-delay: 0.43s;">
+		<svg class="absolute inset-0 m-auto size-5 z-10 opacity-0 transform scale-0 group-hover:opacity-100 group-hover:scale-150 transition-transform duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+		<path d="M12 5l0 14"></path>
+		<path d="M5 12l14 0"></path>
+		</svg>
+		<img class="group-hover:brightness-50 hover" src="/instrumentos/instrumento-4.png" alt="instrumento">
+		</div>	
+		</svg>	
+		</div>
+
+		</section>
+
+		<!--FIN SECCION NOSOTROS  -->
+
+
+        <!--SECCION CONTACTO-->	
+
+        <section id="contact" class="flex h-[700px] mt-20 pt-32 brightness-90" data-astro-cid-joh4gybl>
+
+<div class="flex flex-col py-8 px-5 bg-[#2b2b2b] rounded-2xl mx-8 w-[600px] h-[500px]" data-astro-cid-joh4gybl>
+<h2 class="mb-8 text-4xl tracking-tight font-extrabold font-mono text-center text-white" data-astro-cid-joh4gybl>Contactanos</h2>
+<form action="#" class="space-y-5" data-astro-cid-joh4gybl>
+<div class="relative" data-astro-cid-joh4gybl>
+<input type="email"  id="email" class="p-3 w-full text-sm rounded-2xl bg-[#2c2c2c] border border-white text-white" placeholder="ingrese su email..." required data-astro-cid-joh4gybl>	
+<svg class="absolute top-3 right-3 text-white" data-astro-cid-joh4gybl xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+<path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
+</svg>
+</div>
+
+<div class="relative" data-astro-cid-joh4gybl>
+<input type="text" id="name" class="p-3 w-full text-sm rounded-2xl bg-[#2c2c2c] border border-white placeholder-gray-400 text-white" placeholder="Nombre" required data-astro-cid-joh4gybl>
+<svg class="absolute top-3 right-3 text-white" data-astro-cid-joh4gybl xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+<path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path> 
+</svg>
+</div>
+
+<div class="sm:col-span-2 relative" data-astro-cid-joh4gybl>
+<textarea id="message" rows="6" class="p-3 w-full text-sm rounded-2xl bg-[#2c2c2c] border border-white placeholder-gray-400 text-white" placeholder="escribe tu mensaje..." data-astro-cid-joh4gybl></textarea>
+<svg class="absolute top-3 right-3 text-white" data-astro-cid-joh4gybl xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10"></path>
+<path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2"></path>
+</svg>
+</div>
+
+<button type="submit" class="flex items-center py-3 px-5 gap-2 text-lg font-medium text-white rounded-3xl p-3 bg-[#2c2c2c] border border-white placeholder-gray-400 hover:text-slate-700 hover:bg-white" data-astro-cid-joh4gybl>Enviar Mensaje
+<svg data-astro-cid-joh4gybl xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
+</svg>
+
+</button>
+</form>
+</div>
+
+<h3 class="text-white font-bold text-4xl text-center px-1 text-pretty" data-astro-cid-joh4gybl> Nosotros te brindamos tu instrumento, vos haces la musica</h3>
+        </section>
+
+        <!--FIN SECCION CONTACTO-->
+
+
+        <!--ESTILOS DEL FOOTER-->
 		<footer class="footer">
 
-			<ul class="social-icon">
-				<li class="icon-elem">
-                    <a href="" class="icon">
-						<ion-icon name="home-outline"></ion-icon>
+	    <!--LLAMAMOS A CADA ICONO-->
+		<ul class="social-icon">
+		<li class="icon-elem">
+        <a href="" class="icon">
+		<ion-icon name="home-outline"></ion-icon>
 					</a>
 				</li>
 
@@ -88,9 +308,11 @@ const { title, description } = Astro.props;
 						<ion-icon name="mail-outline"></ion-icon>
 					</a>
 				</li>
-			</ul>	
+			</ul>
+			
 
-		
+		<!--DEFINIMOS ELEMENTOS DE NAVEGACION EN EL FOOTER-->
+
         <ul class="gap-4 menu">
 			<li class="menu-elem">
 				<a href="" class="menu-icon"> Inicio </a>
@@ -102,15 +324,20 @@ const { title, description } = Astro.props;
 				<a href="" class="menu-icon"> Contacto </a>
 			</li>
 		</ul>
-		<p class="text">@2024 | Hoffmann Agustin Emilio Lionel</p>
 
+        <!--INDICAMOS EL ACTUAL AÑO Y EL NOMBRE DEL AUTOR DE LA PAGINA WEB-->
+
+		<p class="text">2024 | ©Hoffmann Agustin</p>
 		</footer>
+
+        <!--DECLARAMOS ENLACES NECESARIOS PARA UTILIZAR ICONOS-->
 
 		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	    </body>
+        </html>
 
-	</body>
-</html>
+<!--ESTILOS GLOBALES-->
 
 <style is:global> 
 	html{
@@ -129,6 +356,8 @@ const { title, description } = Astro.props;
 		height: 600px;
 	}
 </style>
+
+<!--ESTILOS FOOTER-->
 
 <style>
 	footer{
@@ -206,5 +435,120 @@ const { title, description } = Astro.props;
 	margin-bottom: 10px;
 	font-size: 20px;
     }
+</style>
+
+<!--ESTILOS SECTION-CARD-->
+
+<style>
+
+.container{
+	width: 100%;
+	display: flex;
+	max-width: 100%;
+}
+
+.card{
+	width: 100%;
+	margin: 20px;
+	border-radius: 6px;
+	overflow: hidden;
+	background: white;
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+	cursor: default;
+	transition: all 400ms ease;
+}
+
+/*ESTILOS HOVER DE LAS CARD*/
+
+.card:hover{
+box-shadow: 5px 5px 20px rgba(0,0,0,0.10);
+transform: translateY(-3%);
+}
+
+/*ESTILOS DE LAS IMAGENES DE LA CARD*/
+
+.card img{
+	width: 100%;
+	height: 210px;
+}
+
+.card .contenido{
+	padding: 15px;
+	text-align: center;
+	color: #000000;
+}
+
+.card .contenido p{
+	line-height: 1.5;
+	color: #000000;
+}
+
+.card .contenido h3{
+	font-weight: 400;
+	margin-bottom: 15px;
+}
+
+.card .contenido a{
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px;
+	margin-top: 10px;
+	color: #000000;
+	border: 1px solid #000000;
+	border-radius: 4px;
+	transition: all 400ms ease;
+}
+
+.card .contenido a:hover{
+	background: #000000;
+	color: #FFFFFF;
+}
+</style>
+
+<!--ESTILOS SECCION CONTACTO-->
+
+<style>
+
+element.style {
+}
+
+section[data-astro-cid-joh4gybl] {
+background-image: url(/contact-bg.png);
+width: 100%;
+background-repeat: no-repeat;
+background-size: 100%;
+background-position: center;
+}
+
+.py-8 {
+	padding-top: 1%;
+	padding-bottom: 2rem;
+}
+
+.px-5 {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+
+.brightness-90 { 
+    --tw-brightness: brightness(.9);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.pt-32 {
+    padding-top: 8rem;
+}
+
+.h-\[700px\] {
+    height: 700px;
+}
+
+.flex {
+    display: flex;
+}
+
+.mt-20 {
+    margin-top: 5rem;
+}
 
 </style>

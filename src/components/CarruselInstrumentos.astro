@@ -2,27 +2,38 @@
 const { instrumento } = Astro.props;
 import ArrowRight from './icon/ArrowRight.astro';
 import Marca from "./icon/Marca.astro";
-import Tipo from "./icon/Tipo.astro";
+import Tipo from "./icon/Tipo.astro";            //IMPORTAMOS COMPONENTES ICON PARA MOSTRARLOS EN EL CARRUSEL
 import Precio from "./icon/Precio.astro";
 import Pin from './icon/Pin.astro';
 ---
 
+<!--LOGICA CARRUSEL INSTRUMENTOS-->
+
 <div id="carousel" class="h-full w-[400px] m-2 flex-shrink-0 cursor-pointer">
  <div class="rounded-3xl overflow-hidden mb-4 h-[250px] relative img-brillo">
+
+  <!--LLAMAMOS A CADA IMAGEN CORRESPONDIENTE AL CARRUSEL-->
+
   <img 
   class="size-[100%] object-cover absolute" 
-  src={`/instrumentos/instrumento-${instrumento.id}.png`}
+  src={`/instrumentos/instrumento-${instrumento.id}.png`} 
   alt={instrumento.id}
 />
+
+<!--CREAMOS BOTON "DETALLES"-->
+
 <span 
   class="absolute flex gap-2 top-3 left-4 border border-black text-xs rounded-xl px-4 py-2 
   font-semibold bg-black hover:text-white"
   >Detalles
-  <ArrowRight />
+
+  <ArrowRight /> <!--NOMBRE COMPONENTE BOTON "DETALLES"-->
 </span>
 </div>
 <div class="flex flex-col gap-4">
 <div class="gap-4 border-b-[1px] border-gray-400">
+
+<!--NOMBRAMOS CARACTERISTICAS DEL INSTRUMENTO-->
 
  <div class="flex items-center gap-2">
  <Marca class="text-white size-10"/>
@@ -46,6 +57,9 @@ import Pin from './icon/Pin.astro';
 </div>
 </div>
 </div>
+
+<!--NOMBRAMOS CARACTERISTICAS DEL INSTRUMENTO-->
+
 <div class="flex flex-col p-2  text-white">
   <h5 class="text-2xl capitalize font-semibold">{instrumento.modelo}</h5>
   <h5 class="text-xl capitalize font-semibold">Origen: {instrumento.origen}</h5>
@@ -56,6 +70,8 @@ import Pin from './icon/Pin.astro';
 </div>
 </div>
 </div>
+
+<!--ESTILOS HOVER DE LA IMAGEN DEL CARRUSEL-->
 
 <style>
   .img-brillo::after{
